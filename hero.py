@@ -43,7 +43,7 @@ class Hero():
 
     def update(self):
         self.get_hero_ypos()
-        self.get_hero_xpos
+        self.get_hero_xpos()
         self.move()
 
 
