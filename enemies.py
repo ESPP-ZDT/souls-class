@@ -5,15 +5,16 @@ class BossRonexadas():
     def __init__(self):
         self.ronexadas = makeSprite(('data/img/apparotion.png'))
         self.deadronexadas = addSpriteImage(self.ronexadas,'data/img/death coin.png')
+        showSprite(self.ronexadas)
         transformSprite(self.ronexadas, 90, 1)
-        self.ronexadas.x = 320  # w jakim miejscu sie spawnuje x
-        self.ronexadas.y = 800  # w jakim miejscu sie spawnuje y
-        self.ronexadas.xspeed = random.randint(1, 2) / 2
-        self.ronexadas.yspeed = random.randint(1, 3) / 2
+        self.ronexadas.x = 340  # w jakim miejscu sie spawnuje x
+        self.ronexadas.y = 0  # w jakim miejscu sie spawnuje y
+        self.ronexadas.xspeed = random.randint(1, 2) / 30
+        self.ronexadas.yspeed = random.randint(1, 3) / 30
         self.ronexadas_speed = 3
         moveSprite(self.ronexadas, self.ronexadas.x, self.ronexadas.y, True)
         self.min_dist = 1000
-        showSprite(self.ronexadas)
+
         self.ronexadas_hp = 100
         self.id = id
         self.heroxpos = hero_x_pos
