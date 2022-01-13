@@ -35,13 +35,15 @@ class Hero():
         hero_y_pos = self.ypos
         moveSprite(self.hero, self.xpos, self.ypos, True)
 
-    #def getheroypos():
-       #return int(self.ypos)
+    def get_hero_ypos(self):
+       return int(self.ypos)
 
-    #def getheroxpos():
-        #return int(self.xpos)
+    def get_hero_xpos(self):
+        return int(self.xpos)
 
     def update(self):
+        self.get_hero_ypos()
+        self.get_hero_xpos
         self.move()
 
 
