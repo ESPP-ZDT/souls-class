@@ -12,12 +12,12 @@ setAutoUpdate(False)
 hero = Hero()
 hero_weapon = HeroWeapon()
 hud = Hud(hero)
-ronexadas = BossRonexadas()
+ronexadas = BossRonexadas(hero)
 while True:
+    ronexadas.update()
     hero.update()
     hero_weapon.update()
     hud.update()
-    ronexadas.update()
 
 
 
