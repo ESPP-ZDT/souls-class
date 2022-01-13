@@ -3,10 +3,10 @@ from pygame_functions import *
 from hero import *
 class BossRonexadas():
     def __init__(self, hero):
-        self.ronexadas = makeSprite(('data/img/crab angel.png'))
+        self.ronexadas = makeSprite(('data/img/sotfh 1.png'))
         self.deadronexadas = addSpriteImage(self.ronexadas,'data/img/death coin.png')
         showSprite(self.ronexadas)
-        transformSprite(self.ronexadas, 90, 1)
+        #transformSprite(self.ronexadas, 90, 1)
         self.ronexadas.x = 340  # w jakim miejscu sie spawnuje x
         self.ronexadas.y = 0  # w jakim miejscu sie spawnuje y
         self.ronexadas.xspeed = 0
@@ -41,5 +41,4 @@ class BossRonexadas():
         moveSprite(self.ronexadas, self.ronexadas.x, self.ronexadas.y, True)
     def update(self):
         self.move()
-
 

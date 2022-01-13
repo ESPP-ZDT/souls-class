@@ -6,6 +6,7 @@ from deathscreen import *
 from random import *
 from hud import *
 from enemies import *
+from ghosts import *
 setAutoUpdate(False)
 
 
@@ -13,10 +14,14 @@ hero = Hero()
 hero_weapon = HeroWeapon()
 hud = Hud(hero)
 ronexadas = BossRonexadas(hero)
+celestialwatcher = CelestialWatcher(hero)
 while True:
-    ronexadas.update()
     hero.update()
+    celestialwatcher.update()
+    ronexadas.update()
+
     hero_weapon.update()
+
     hud.update()
 
 
