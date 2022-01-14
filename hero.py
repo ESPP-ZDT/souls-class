@@ -131,6 +131,7 @@ class HeroPots():
         changeLabel(self.health_display, str(self.hero_health), self.hpcolor)
         changeLabel(self.mana_display, str(self.mana), self.mana_color)
         changeLabel(self.souls_display, str(self.souls), self.souls_color)
+        changeLabel(self.display_manapotions, str(self.mana_potions), self.mana_color)
 
 
 
