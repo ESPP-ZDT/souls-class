@@ -15,13 +15,17 @@ hero_weapon = HeroWeapon()
 hud = Hud(hero)
 ronexadas = BossRonexadas(hero)
 celestialwatcher = CelestialWatcher(hero)
+pots = HeroPots(hero,hud)
 while True:
     hero.update()
     celestialwatcher.update()
     ronexadas.update()
+    hero.update()
 
     hero_weapon.update()
+    pots.update()
 
+    updateDisplay()
     hud.update()
 
 

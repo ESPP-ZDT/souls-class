@@ -1,4 +1,5 @@
 import pygame as pg, random
+from hud import *
 from pygame_functions import *
 
 hero_x_pos = 400
@@ -94,5 +95,45 @@ class HeroWeapon():
 
     def update(self):
         self.attack()
+
+class HeroPots():
+    def __init__(self,hero,hud):
+        self.hero_health = hero.hero_health
+        self.hpcolor = hud.hpcolor
+        self.mana = hero.mana
+        self.mana_potions = hero.mana_potions
+        self.display_manapotions = hud.display_manapotions
+        self.mana_color = hud.manacolor
+        self.souls = hero.souls
+        self.souls_color = hud.soulscolor
+        self.health_display = hud.display_health
+        self.mana_display = hud.display_mana
+        self.souls_display = hud.display_souls
+
+    def use(self):
+        #using soul
+        if keyPressed("x") and self.souls > 0:
+            self.souls -= 1
+            print(str(self.souls))
+            self.hero_health += 100
+            self.mana += 100
+            print(self.mana)
+            print(self.hero_health,self.mana)
+        #using mana potion
+        if keyPressed("z") and self.mana_potions > 0:
+            self.mana_potions -= 1
+            self.mana += 50
+            # display manachange
+            print(' used mana potion ' + 'manalevel is ' + str(self.mana))
+
+    def update(self):
+        self.use()
+        changeLabel(self.health_display, str(self.hero_health), self.hpcolor)
+        changeLabel(self.mana_display, str(self.mana), self.mana_color)
+        changeLabel(self.souls_display, str(self.souls), self.souls_color)
+
+
+
+
 
 #enemies = [enemy() for i in range(40)]

@@ -4,13 +4,13 @@ from pygame_functions import *
 
 class CelestialWatcher():
     def __init__(self, hero):
-        self.watcher = makeSprite(('data/img/celestialwatch.png'))
+        self.watcher = makeSprite(('data/img/monster1.png'))
         showSprite(self.watcher)
-        #transformSprite(self.ronexadas, 90, 1)
-        self.watcher.x = 300  # w jakim miejscu sie spawnuje x
+        #transformSprite(self.watcher, 90, 1)
+        self.watcher.x = 100  # w jakim miejscu sie spawnuje x
         self.watcher.y = 400  # w jakim miejscu sie spawnuje y
-        self.watcher.xspeed = 10
-        self.watcher.yspeed = 2
+        self.watcher.xspeed = (1.1*39)/20
+        self.watcher.yspeed = -(1.1*39)/20
         self.watcher_speed = 3
         moveSprite(self.watcher, self.watcher.x, self.watcher.y, True)
         self.min_dist = 100

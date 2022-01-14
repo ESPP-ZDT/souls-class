@@ -28,11 +28,6 @@ class Hud():
         showLabel(self.display_mana)
         showLabel(self.display_souls)
         showLabel(self.display_manapotions)
-    def hudupdate(self):
-        changeLabel(self.display_health, str(self.hero_health), self.hpcolor)
-        changeLabel(self.display_mana, str(self.mana), self.manacolor)
-        changeLabel(self.display_manapotions, str(self.mana_potions), self.manacolor)
-        changeLabel(self.display_souls, str(self.souls), self.soulscolor)
+
     def update(self):
         self.huddisplay()
-        self.hudupdate()
