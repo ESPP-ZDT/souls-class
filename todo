@@ -1,16 +1,39 @@
 ZROBIONE
 hud
+
+
+moze zrobic czlonkow druzyny, albo summony np summon deathmory blitowalbys eathemory z gory na srodek ekranu i potem wszystko w aoe dostawaloby obrazenia
+
+
+
+zrobic atak na spacje. z wykorzystaniem fraktala i takie tam
+
+poruszanie sie elementow bedzie zaimplementowane w kazdej klasie elementu, mozna zrobic wieksza klase elementow z 
+subklasami ktore przejmowaly by move jesli to mozliwe
+
+
+
+zrobic taka szrame jebana i flaki wylatujace przy kazdym trafieniu potwora, taki powidok za bronia
+
+
+
+
+
+
+#bohater jest za szybki
+
+
+
+
+
+
+
+
 hp - WYSWIETLA HP, DZIALA
 mana- WYSWIETLA MANA
-ekwipunek 
-ogarnac z Andrzejem sloty, przlozenie ilosci sily na ilosc slotow, rozne postacie,
-itemy, spawnowanie itemow
 
-hud display powinien wszyskto zbierac i wyswietlac na koncu, a nie przy ifach
-obejrzec 3 filmiki od klas
-ten ze sprite i takie tam
-I OBEJRZYJ PYGAME FUNCTIONS JESZCZE RAZ
-potem obejrzec kod pygame functions, skomentowac caly kod
+
+
 
 SPISZ BŁEDY
 PRZEMIEN RONEXADASA NA ZWYKLEGO ENEMY

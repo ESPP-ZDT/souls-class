@@ -1,9 +1,13 @@
 import pygame as pg, random
 from hud import *
 from pygame_functions import *
+from enemies import *
+from boosts import *
+from particle_effects import *
 
 hero_x_pos = 400
 hero_y_pos = 320
+
 
 
 class Hero():
@@ -11,6 +15,7 @@ class Hero():
         self.hero = makeSprite('data/img/hero.png')
         self.deathsprite = addSpriteImage(self.hero,'data/img/death coin.png' )
         showSprite(self.hero)
+        #transformSprite(self.hero, 90, 1)
         self.xpos = 400
         self.ypos = 320
         self.xspeed = 0
@@ -19,10 +24,13 @@ class Hero():
         self.mana = 100
         self.mana_potions = 1
         self.souls = 1
+
+
     def move(self):
         if keyPressed("up"):
             scrollBackground(0,10)
             transformSprite(self.hero, -180, 1)
+
         elif keyPressed("down"):
             scrollBackground(0,-10)
             transformSprite(self.hero, 360, 1)
@@ -90,10 +98,14 @@ class HeroWeapon():
             self.hero_weapon.x = self.hero_weapon.xbasic
             self.hero_weapon.y = self.hero_weapon.ybasic
             moveSprite(self.hero_weapon, self.hero_weapon.xbasic, self.hero_weapon.ybasic, True)
+            hideSprite(self.hero_weapon)
             killSprite(self.hero_weapon)
+            
             updateDisplay()
 
     def update(self):
+
+
         self.attack()
 
 class HeroPots():
