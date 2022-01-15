@@ -3,7 +3,7 @@ from hud import *
 from pygame_functions import *
 from enemies import *
 from boosts import *
-from particle_effects import *
+
 
 hero_x_pos = 400
 hero_y_pos = 320
@@ -104,8 +104,6 @@ class HeroWeapon():
             updateDisplay()
 
     def update(self):
-
-
         self.attack()
 
 class HeroPots():

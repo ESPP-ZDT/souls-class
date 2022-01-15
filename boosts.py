@@ -19,9 +19,7 @@ class HpBoost():
         self.health_display = hud.display_health
         self.hero_health = hero.hero_health
 
-    def boost_heal(self):
-        if touching(self.hero, self.hpboost):
-            self.hero_health += 130
+
 
     def move(self):
         if keyPressed("up"):
@@ -53,7 +51,7 @@ class HpBoost():
         self.healing_collision()
         changeLabel(self.health_display, str(self.hero_health), self.hpcolor)
         updateDisplay()
-        self.boost_heal()
+
         #changeLabel(self.health_display, str(self.hero_health), self.hpcolor)
         self.move()
 

@@ -63,13 +63,9 @@ class BossRonexadas():
 
 
     def boss_collision(self):
-
         if touching(self.hero_weapon, self.ronexadas):
             updateDisplay()
-
-
             if self.ronexadas_hp >= 0:
-
                 for i in range(13):
                     self.blood_particles.append(
                         Blood(self.hero_weapon.x, self.hero_weapon.y, random.randrange(-8, 8), random.randrange(-2, 0), 4,
@@ -77,27 +73,18 @@ class BossRonexadas():
                     for Blood_ in self.blood_particles:
                         if Blood_.lifetime >= 0:
                             Blood_.draw(screen)
-
                         else:
                             self.blood_particles.pop(self.blood_particles.index(Blood_))
-
-
-
-
                 self.ronexadas_hp -= self.hero_weapon_attack
+                print('the boss has been hit, his hp is now' + str(self.ronexadas_hp))
                 updateDisplay()
-                #showTextBox(boss_damage)
-
-                updateDisplay()
-
             else:
-                changeSpriteImage(self.ronexadas, 1)                # killSprite(ronexadas)
+                changeSpriteImage(self.ronexadas, 1)
                 # enemies.remove(ronexadas)
-                self.ronexadas.xspeed = 0  # to nie dziala
+                self.ronexadas.xspeed = 0
                 self.ronexadas.yspeed = 0
-                self.ronexadas_speed = 0# to nie dziala
-                    # updateDisplay()
-                    # problem jest taki ze jak zabije jednego enemy, ruszaja sie dalej, zabijajac dalej trawiam na takiego, ktory sprawia ze przestaja sie ruszac
+                self.ronexadas_speed = 0
+        #if touching self.hero, self.ronexadas
 
     def move(self):
         self.ronexadas.x += self.ronexadas.xspeed

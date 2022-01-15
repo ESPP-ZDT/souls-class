@@ -12,8 +12,56 @@ poruszanie sie elementow bedzie zaimplementowane w kazdej klasie elementu, mozna
 subklasami ktore przejmowaly by move jesli to mozliwe
 
 
-
+idee:
 zrobic taka szrame jebana i flaki wylatujace przy kazdym trafieniu potwora, taki powidok za bronia
+
+
+15.01.2022
+boosts - boost znika jako sprajt przy kolizji z bohaterem, ale nie znika jako obiekt, dalej jak na niego najezdzamy
+dodaje hp.
+moze zrobic jakis boolean ze if touched = True, nie bedzie wykonywal danej akcji
+
+
+nie ma zaimplementowanego endgame - jesli hp bohatera spadnie do zera, endscreen sie blituje, i gra sie konczy.
+
+def move nie dziala = w ghostach to nie przeszkadza, moga sobie roznie dzialac
+ale w enemies trzeba to poprawic.
+dodac kolizje dla potwora i bohatera
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -21,6 +69,7 @@ zrobic taka szrame jebana i flaki wylatujace przy kazdym trafieniu potwora, taki
 
 
 #bohater jest za szybki
+
 
 #ogarnac blitowanie zmiany hp przy wywolywaniu przy kolizjach
 #ogarnac znikanie sprajtow

@@ -11,7 +11,7 @@ from hud import *
 from enemies import *
 from ghosts import *
 from boosts import *
-from particle_effects import *
+
 
 #setAutoUpdate(False)
 
@@ -26,27 +26,15 @@ pots = HeroPots(hero,hud)
 hpboost = HpBoost(hero,hud)
 
 while True:
-
-
-
     hero.update()
     celestialwatcher.update()
-
     hero.update()
-
-
-
     hero_weapon.update()
-    pots.update()
-
-    updateDisplay()
+    #updateDisplay()
     hud.update()
+    pots.update()
     hpboost.update()
     ronexadas.update()
-
-
-
-
     updateDisplay()
     tick(60)
 endWait()
