@@ -28,17 +28,17 @@ class Hero():
 
     def move(self):
         if keyPressed("up"):
-            scrollBackground(0,10)
+            scrollBackground(0,5)
             transformSprite(self.hero, -180, 1)
 
         elif keyPressed("down"):
-            scrollBackground(0,-10)
+            scrollBackground(0,-5)
             transformSprite(self.hero, 360, 1)
         elif keyPressed("right"):
-            scrollBackground(-10, 0)
+            scrollBackground(-5, 0)
             transformSprite(self.hero, -90, 1)
         elif keyPressed("left"):
-            scrollBackground(10, 0)
+            scrollBackground(5, 0)
             transformSprite(self.hero, 90, 1)
         hero_x_pos = self.xpos
         hero_y_pos = self.ypos

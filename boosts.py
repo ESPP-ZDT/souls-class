@@ -25,28 +25,27 @@ class HpBoost():
 
     def move(self):
         if keyPressed("up"):
-            self.hpboost.y += 20
+            self.hpboost.y += 10
             moveSprite(self.hpboost, self.hpboost.x, self.hpboost.y, True)
 
         elif keyPressed("down"):
-            self.hpboost.y += -20
+            self.hpboost.y += -10
             moveSprite(self.hpboost, self.hpboost.x, self.hpboost.y, True)
         elif keyPressed("right"):
-            self.hpboost.x += -20
+            self.hpboost.x += -10
             moveSprite(self.hpboost, self.hpboost.x, self.hpboost.y, True)
 
         elif keyPressed("left"):
-            self.hpboost.x += 20
+            self.hpboost.x += 10
             moveSprite(self.hpboost, self.hpboost.x, self.hpboost.y, True)
 
     def healing_collision(self):
-
-
         if touching(self.hero, self.hpboost):
             self.hero_health = self.hero_health + 10
             print(str(self.hero_health))
             killSprite(self.hpboost)
             hideSprite(self.hpboost)
+            self.hpboost.kill()
 
 
 

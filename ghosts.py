@@ -20,9 +20,24 @@ class CelestialWatcher():
         self.gethx = hero.get_hero_ypos()
         self.gethy = hero.get_hero_xpos()
 
+    def move2(self):
+        if keyPressed("up"):
+            self.watcher.y += 10
+            moveSprite(self.watcher, self.watcher.x, self.watcher.y, True)
 
+        elif keyPressed("down"):
+            self.watcher.y += -10
+            moveSprite(self.watcher, self.watcher.x, self.watcher.y, True)
+        elif keyPressed("right"):
+            self.watcher.x += -10
+            moveSprite(self.watcher, self.watcher.x, self.watcher.y, True)
+
+        elif keyPressed("left"):
+            self.watcher.x += 10
+            moveSprite(self.watcher, self.watcher.x, self.watcher.y, True)
 
     def move(self):
+
         self.watcher.x += self.watcher.xspeed
         self.watcher.y += self.watcher.yspeed
         self.delta_x = self.gethx - self.watcher.y
@@ -41,4 +56,5 @@ class CelestialWatcher():
         moveSprite(self.watcher, self.watcher.x, self.watcher.y, True)
     def update(self):
         self.move()
+        self.move2()
 

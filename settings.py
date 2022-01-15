@@ -10,4 +10,5 @@ HEIGHT = 800
 screenSize(HEIGHT,WIDTH)
 setAutoUpdate(False)
 setBackgroundImage('data/img/tile 3.png')
+
 main_clock = pg.time.Clock()

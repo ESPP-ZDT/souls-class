@@ -1,6 +1,23 @@
 import pygame as pg, random
 from pygame_functions import *
 from hero import *
+class Blood():
+    def __init__(self, x , y, x_velocity, y_velocity, radius, color, gravity_scale):
+        self.x = x
+        self.y = y
+        self.x_velocity = x_velocity
+        self.y_velocity = y_velocity
+        self.radius = radius
+        self.color = color
+        self.gravity_scale = gravity_scale
+        self.lifetime = 10
+        self.gravity = 5
+    def draw(self, screen):
+        self.lifetime -= 1
+        self.gravity -= self.gravity_scale
+        self.x += self.x_velocity
+        self.x += self.x_velocity * self.gravity
+        pg.draw.circle(screen, self.color, (self.x,self.y),self.radius)
 
 class BossRonexadas():
     def __init__(self, hero,heroweapon):
@@ -14,7 +31,8 @@ class BossRonexadas():
         self.ronexadas.yspeed = 0
         self.ronexadas_speed = 3
         moveSprite(self.ronexadas, self.ronexadas.x, self.ronexadas.y, True)
-        self.min_dist = 100
+        self.min_dist = 1
+        self.blood_particles = []
 
 
         self.ronexadas_hp = 1000
@@ -28,18 +46,18 @@ class BossRonexadas():
 
     def move2(self):
         if keyPressed("up"):
-            self.ronexadas.y += 20
+            self.ronexadas.y += 10
             moveSprite(self.ronexadas, self.ronexadas.x, self.ronexadas.y, True)
 
         elif keyPressed("down"):
-            self.ronexadas.y += -20
+            self.ronexadas.y += -10
             moveSprite(self.ronexadas, self.ronexadas.x, self.ronexadas.y, True)
         elif keyPressed("right"):
-            self.ronexadas.x += -20
+            self.ronexadas.x += -10
             moveSprite(self.ronexadas, self.ronexadas.x, self.ronexadas.y, True)
 
         elif keyPressed("left"):
-            self.ronexadas.x += 20
+            self.ronexadas.x += 10
             moveSprite(self.ronexadas, self.ronexadas.x, self.ronexadas.y, True)
 
 
@@ -47,18 +65,37 @@ class BossRonexadas():
     def boss_collision(self):
 
         if touching(self.hero_weapon, self.ronexadas):
+            updateDisplay()
+
+
             if self.ronexadas_hp >= 0:
+
+                for i in range(13):
+                    self.blood_particles.append(
+                        Blood(self.hero_weapon.x, self.hero_weapon.y, random.randrange(-8, 8), random.randrange(-2, 0), 4,
+                              (255, 0, 100), 10))
+                    for Blood_ in self.blood_particles:
+                        if Blood_.lifetime >= 0:
+                            Blood_.draw(screen)
+
+                        else:
+                            self.blood_particles.pop(self.blood_particles.index(Blood_))
+
+
+
+
                 self.ronexadas_hp -= self.hero_weapon_attack
+                updateDisplay()
                 #showTextBox(boss_damage)
 
                 updateDisplay()
 
             else:
-                changeSpriteImage(self.ronexadas, 1)
-                # killSprite(ronexadas)
+                changeSpriteImage(self.ronexadas, 1)                # killSprite(ronexadas)
                 # enemies.remove(ronexadas)
                 self.ronexadas.xspeed = 0  # to nie dziala
-                self.ronexadas.yspeed = 0  # to nie dziala
+                self.ronexadas.yspeed = 0
+                self.ronexadas_speed = 0# to nie dziala
                     # updateDisplay()
                     # problem jest taki ze jak zabije jednego enemy, ruszaja sie dalej, zabijajac dalej trawiam na takiego, ktory sprawia ze przestaja sie ruszac
 
@@ -83,5 +120,11 @@ class BossRonexadas():
         self.move2()
         self.move()
         self.boss_collision()
+
+
+
+
+
+
 
 

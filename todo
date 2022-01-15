@@ -22,6 +22,8 @@ zrobic taka szrame jebana i flaki wylatujace przy kazdym trafieniu potwora, taki
 
 #bohater jest za szybki
 
+#ogarnac blitowanie zmiany hp przy wywolywaniu przy kolizjach
+#ogarnac znikanie sprajtow
 
 
 
@@ -47,7 +49,7 @@ zostawic hpboost
 
 
 
-ilosc dusz
+
 dostepnosc broni
 area of effect attacks
 wyswietlanie, jaka bron mamy na sobie,w tekscie,

@@ -1,4 +1,7 @@
 import pygame as pg
+
+import enemies
+import hero
 from pygame_functions import *
 from hero import *
 from settings import *
@@ -10,7 +13,7 @@ from ghosts import *
 from boosts import *
 from particle_effects import *
 
-setAutoUpdate(False)
+#setAutoUpdate(False)
 
 
 
@@ -21,10 +24,14 @@ ronexadas = BossRonexadas(hero, hero_weapon)
 celestialwatcher = CelestialWatcher(hero)
 pots = HeroPots(hero,hud)
 hpboost = HpBoost(hero,hud)
+
 while True:
+
+
+
     hero.update()
     celestialwatcher.update()
-    ronexadas.update()
+
     hero.update()
 
 
@@ -35,6 +42,7 @@ while True:
     updateDisplay()
     hud.update()
     hpboost.update()
+    ronexadas.update()
 
 
 
