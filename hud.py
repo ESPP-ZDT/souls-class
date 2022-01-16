@@ -29,5 +29,7 @@ class Hud():
         showLabel(self.display_souls)
         showLabel(self.display_manapotions)
 
+
+
     def update(self):
         self.huddisplay()

@@ -20,9 +20,10 @@ class Blood():
         self.x += self.x_velocity * self.gravity
         pg.draw.circle(screen, self.color, (self.x,self.y),self.radius)
 
+
+
 class BossRonexadas():
     def __init__(self, hero,heroweapon,hud):
-
         self.ronexadas = makeSprite(('data/img/sotfh 1.png'))
         self.deadronexadas = addSpriteImage(self.ronexadas,'data/img/death coin.png')
         showSprite(self.ronexadas)
@@ -69,11 +70,11 @@ class BossRonexadas():
     def boss_collision(self):
         if touching(self.hero_weapon, self.ronexadas):
             updateDisplay()
-            if self.ronexadas_hp >= 0:
+            if self.ronexadas_hp > 0:
                 for i in range(30):
-                    self.blood_particles.append(
-                        Blood(self.ronexadas.x, self.ronexadas.y,  random.randrange(-8, 8), random.randrange(-2, 0), 3,
-                              (255, 30, 30), 1))
+                   # self.blood_particles.append(
+                        #Blood(self.ronexadas.x, self.ronexadas.y,  random.randrange(-8, 8), random.randrange(-2, 0), 3,
+                              #(255, 30, 30), 1))
                     for Blood_ in self.blood_particles:
                         if Blood_.lifetime > 0:
                             Blood_.draw(screen)
@@ -88,13 +89,12 @@ class BossRonexadas():
                 self.ronexadas.xspeed = 0
                 self.ronexadas.yspeed = 0
                 self.ronexadas_speed = 0
+                hideSprite(self.ronexadas)
         #if touching self.hero, self.ronexadas
-        if touching(self.ronexadas, self.hero):
-            if self.ronexadas_hp >= 0:
-                self.hero_health -= 10
-                print(str(self.hero_health))
-
-
+        if touching(self.hero, self.ronexadas):
+            if self.ronexadas_hp > 0:
+                pass
+                #Hero.take_damage(self.hero_health,10)
 
 
     def move(self):

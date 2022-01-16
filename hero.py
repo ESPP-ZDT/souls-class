@@ -2,11 +2,13 @@ import pygame as pg, random
 from hud import *
 from pygame_functions import *
 from enemies import *
-from boosts import *
+#from boosts import *
 
 
 class Hero():
     def __init__(self):
+
+        self.hero_health = 100
         self.hero = makeSprite('data/img/hero.png')
         self.deathsprite = addSpriteImage(self.hero,'data/img/death coin.png' )
         showSprite(self.hero)
@@ -15,17 +17,19 @@ class Hero():
         self.ypos = 320
         self.xspeed = 0
         self.yspeed = 0
-        self.hero_health = 100
+
         self.mana = 100
         self.mana_potions = 1
         self.souls = 1
-
+        
+    #def take_damage(self.hero_health, damage):
+       #self.hero_health -= damage
+        
 
     def move(self):
         if keyPressed("up"):
             scrollBackground(0,5)
             transformSprite(self.hero, -180, 1)
-
         elif keyPressed("down"):
             scrollBackground(0,-5)
             transformSprite(self.hero, 360, 1)
@@ -46,6 +50,9 @@ class Hero():
         return int(self.xpos)
 
     def update(self):
+        #self.take_damage()
+        #print(str(hero_hp))
+        print(str(self.hero_health))
         self.get_hero_ypos()
         self.get_hero_xpos()
         self.move()
@@ -64,6 +71,7 @@ class HeroWeapon():
         self.hero_weapon.xspeed = 0
         self.hero_weapon.yspeed = 0
         self.hero_weapon_attack = random.randint(5,20)#obrazenia topora
+
     def attack(self):
         if keyPressed("up") and keyPressed("c"):
             showSprite(self.hero_weapon)

@@ -20,17 +20,18 @@ from boosts import *
 hero = Hero()
 hero_weapon = HeroWeapon()
 hud = Hud(hero)
+#celestialwatcher = CelestialWatcher(hero)
+#celestialwatchers = [CelestialWatcher(hero,id) for id in range(10)]
 ronexadas = BossRonexadas(hero, hero_weapon,hud)
-celestialwatcher = CelestialWatcher(hero)
 pots = HeroPots(hero,hud)
 hpboost = HpBoost(hero,hud)
 
 
 hero_health = getattr(hero, 'hero_health')
 while True:
-    
+
     hero.update()
-    celestialwatcher.update()
+   # [celestialwatcher.update() for celestialwatcher in celestialwatchers]
     hero.update()
     hero_weapon.update()
     #updateDisplay()
