@@ -5,7 +5,7 @@ from hero import *
 from pygame.locals import *
 
 
-
+#klasa tworzaca hud
 
 
 class Hud():

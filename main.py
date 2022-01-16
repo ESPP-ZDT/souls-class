@@ -20,21 +20,29 @@ from boosts import *
 hero = Hero()
 hero_weapon = HeroWeapon()
 hud = Hud(hero)
-ronexadas = BossRonexadas(hero, hero_weapon)
+ronexadas = BossRonexadas(hero, hero_weapon,hud)
 celestialwatcher = CelestialWatcher(hero)
 pots = HeroPots(hero,hud)
 hpboost = HpBoost(hero,hud)
 
+
+hero_health = getattr(hero, 'hero_health')
 while True:
+    
     hero.update()
     celestialwatcher.update()
     hero.update()
     hero_weapon.update()
     #updateDisplay()
-    hud.update()
+
+
     pots.update()
-    hpboost.update()
     ronexadas.update()
+    hpboost.update()
+    hud.update()
     updateDisplay()
+    if hero_health <= 0:
+        showSprite(endscreen)
+        break
     tick(60)
 endWait()

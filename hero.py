@@ -5,11 +5,6 @@ from enemies import *
 from boosts import *
 
 
-hero_x_pos = 400
-hero_y_pos = 320
-
-
-
 class Hero():
     def __init__(self):
         self.hero = makeSprite('data/img/hero.png')

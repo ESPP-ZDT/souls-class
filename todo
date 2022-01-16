@@ -17,10 +17,10 @@ zrobic taka szrame jebana i flaki wylatujace przy kazdym trafieniu potwora, taki
 
 
 15.01.2022
-boosts - boost znika jako sprajt przy kolizji z bohaterem, ale nie znika jako obiekt, dalej jak na niego najezdzamy
-dodaje hp.
-moze zrobic jakis boolean ze if touched = True, nie bedzie wykonywal danej akcji
 
+krew nie dziala - wyswietla sie, ale nie spada, nie rusza sie 
+
+updatowanie huda nie dziala dobrze przy kolizji z bossem sie pierniczy
 
 nie ma zaimplementowanego endgame - jesli hp bohatera spadnie do zera, endscreen sie blituje, i gra sie konczy.
 
