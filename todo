@@ -1,6 +1,11 @@
 ZROBIONE
 hud
 
+zrobic mnostwo przedmiotow, ktore mozna podniesc, i rzucic nimi w potwory
+
+zrobic pokazywanie obrazen 
+
+
 
 moze zrobic czlonkow druzyny, albo summony np summon deathmory blitowalbys eathemory z gory na srodek ekranu i potem wszystko w aoe dostawaloby obrazenia
 
@@ -20,7 +25,7 @@ zrobic taka szrame jebana i flaki wylatujace przy kazdym trafieniu potwora, taki
 
 krew nie dziala - wyswietla sie, ale nie spada, nie rusza sie 
 
-updatowanie huda nie dziala dobrze przy kolizji z bossem sie pierniczy
+updatowanie huda nie dziala dobrze przy kolizji z bossem sie pierniczy, jest ogolnie spierdolony
 
 nie ma zaimplementowanego endgame - jesli hp bohatera spadnie do zera, endscreen sie blituje, i gra sie konczy.
 
@@ -28,11 +33,13 @@ def move nie dziala = w ghostach to nie przeszkadza, moga sobie roznie dzialac
 ale w enemies trzeba to poprawic.
 dodac kolizje dla potwora i bohatera
 
+statystyki takie jak sila lub zrecznosc, ktore w jakichs sytuacjach podnosilybysie, wplywajac na przyklad na poruszanie sie bohatera
 
 
 
 
 
+wprowadzic rysowanie do shedule
 
 
 
